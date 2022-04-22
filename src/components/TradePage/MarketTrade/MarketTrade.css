@@ -1,0 +1,43 @@
+.MarketTrade{
+    width: 335;
+    height: 480;
+    border-style: solid;
+    border-color: #23272e;
+    border-width: 0.1px;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+}
+
+.MarketOrMyTrades{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    color: #848e9c;
+    margin-top: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.SOption{
+    color: orange;
+}
+
+.TitleMarketTrades{
+    display: flex;
+    flex-direction: row;
+    color: #848e9c;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.LeftTitle1{
+    width: 90px;
+}
+.RightTitle1{
+    width: 90px;
+    text-align: right;
+}
+.RightTitle2{
+    width: 100px;
+    text-align: right;
+}

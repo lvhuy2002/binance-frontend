@@ -1,0 +1,85 @@
+.MarketListTradePage{
+    width: 335px;
+    height: 389px;
+}
+.TitleMarketListTradePage{
+    margin-top: 20px;
+    width: 335px;
+    height: 94px;
+}
+
+.searchMarket{
+    width: 270px;
+    height: 25px;
+    color: white;
+    margin-left: 27px;
+    background-color: #292f36;
+    border-width: 0px;
+    outline-width: 0px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.ListMarket{
+    display: flex;
+    flex-direction: row;
+    color: #848e9c;
+    font-size: 18.7px;
+    margin-left: 65px;
+    margin-top: 14px;
+}
+
+.ListMarket>h6{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.ListMarket>h6:hover{
+    color:orange;
+}
+
+.MarketS{
+    color: orange;
+}
+
+.TitleMarketListData{
+    display: flex;
+    flex-direction: row;
+    color: #848e9c;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.PairMarket{
+    width: 120px;
+}
+.PriceMarket{
+    width: 63px;
+    text-align: right;
+}
+
+.ChangeVolumeMarket{
+    width: 105px;
+    text-align: right;
+}
+
+.ChangeIcon{
+    width: 20px;
+    height: 20px;
+    background-image: url(./image/changed.png);
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.ChangeIcon:hover{
+    background-image: url(./image/changed2.png);
+}
+
+.DataEachMarket{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 15px;
+}

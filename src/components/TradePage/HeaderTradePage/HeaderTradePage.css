@@ -1,0 +1,53 @@
+.HeaderTrade{
+    width: 1013px;
+    height: 68px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    border-style: solid;
+    border-color:#23272e;
+    border-width: 0.1px;
+    border-left-width: 0px;
+}
+
+.MarketInformation{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.MarketName{
+    width: 170px;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-color:#23272e;
+    border-width: 0px;
+    border-right-width: 0.1px;
+}
+
+.priceToken{
+    margin-left: 20px;
+}
+
+.InformationTotal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 731px;
+    height: 50px;
+}
+
+.Change24h{
+    width: 100px;
+    margin-left: 40px;
+}
+
+.title{
+    margin-bottom: 5px;
+    color: #848e9c;
+}

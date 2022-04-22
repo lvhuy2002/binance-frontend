@@ -1,14 +1,7 @@
 import React, { useState }  from 'react';
+import TableData from './TableData';
 
-var MarketList = [ 
-    {id: 0, type: "selected", name: "BTC Market" },
-    {id: 1, type: "unselected", name: "ETH Market"},
-    {id: 2, type: "unselected", name: "USDT Market"},
-    {id: 3, type: "unselected", name: "BNB Market"},
-    {id: 4, type: "unselected", name: "USDC Market"}
-]
-
-const CoverComp = () => {
+const HomePage = () => {
     const [MarketDefault, SetMarket] = useState("BTC");
     return (
         <div className='cover'>
@@ -35,10 +28,14 @@ const CoverComp = () => {
                         USDC Market
                     </button>
                 </div>
-                
+                <div>
+                    <TableData 
+                        Default = {MarketDefault}
+                    />
+                </div>
 
             </div>
         </div>
     )
 }
-export default CoverComp;
+export default HomePage;

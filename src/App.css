@@ -1,9 +1,10 @@
 .header{
   display: flex;
+  height: 70px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #000;
+  background-color: rgb(10, 13, 17);
   padding-left: 10px;
   padding-right: 10px;
   color:rgb(255, 255, 255)
@@ -51,11 +52,11 @@
 
 .cover{
  
-  background-color: #000;
+  background-color: #15191c;
 }
 .cover_top{
   background-image:url(./img/cover.png);
-  background-color: #000;
+  background-color: #15191c;
   background-size: cover;
   padding: 5rem;
   color: #ccc ;
@@ -114,4 +115,44 @@
   border-left-width: 0.5px;
   border-right-width: 0.5px;
 }
+
+.HeaderData{
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+
+.HeaderData>h5{
+  width: 320px;
+  margin-left: 20px;
+}
+
+.Data{
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  text-decoration: none
+}
+
+.Link{
+  text-decoration: none;
+  color:#000;
+}
+.Data>h5{
+  width: 320px;
+  margin-left: 20px;
+  
+}
+
+.Data:hover{
+  background-color: coral;
+}
+
+
 
