@@ -1,0 +1,115 @@
+.Login{
+    width: 1344px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.UserPassLogin{
+    margin-top: 20px;
+    width: 400px;
+    height: 430px;
+    background-color: #fcd535;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+.TitleLogin{
+    margin-top: 70px;
+}
+
+.UserNameLogin{
+    margin-top: 30px;
+}
+.UserNameLogin>h5{
+    width: 75px;
+}
+.UserNameInputLogin{
+    width: 340px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+.PasswordLogin{
+    margin-top: 20px
+}
+.PasswordLogin>h5{
+    width: 75px;
+}
+
+.PasswordInputLogin{
+    width: 340px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}   
+
+.LoginButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+    background-color: black;
+    color: white;
+    width: 360px;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.LoginButton>h2{
+    text-align: center;
+    width: 360px;
+}
+
+.LoginButton:hover{
+    background-color:  #262626;
+}
+
+.Or{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+.Or1{
+    background-color: black;
+    width: 170px;
+    height: 1px;
+}
+
+.Or2{
+    background-color: black;
+    width: 170px;
+    height: 1px;
+}
+
+.RegisterButtonLogin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #808080;
+    color: white;
+    width: 360px;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+.RegisterButtonLogin>h2{
+    text-align: center;
+    width: 360px;
+}
+
+.RegisterButtonLogin:hover{
+    background-color:  #262626;
+}

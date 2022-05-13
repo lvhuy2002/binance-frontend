@@ -1,0 +1,96 @@
+.TokenList{
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.TitleTokenCoinPage{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 0.1px;
+    border-color: #d1d5db;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.TitleTokenCoinPage>h5{
+    font-weight: 900px;
+}
+.CoinTitleCoinPage{
+    margin-left: 30px;
+    width: 400px;
+}
+.PriceTitleCoinPage{
+    width: 250px;
+    text-align: right;
+}
+
+.MktCapTitleCoinPage{
+    margin-left: 200px;
+    width: 250px;
+    text-align: right;
+}
+.DataToken{
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-style: solid;
+    border-width: 0px;
+    border-bottom-width: 0.1px;
+    border-color: #d1d5db;
+}
+
+.DataToken:hover{
+    background-color: #d7dde3;
+}
+.TokenImage{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.TokenName{
+    width: 150px;
+    margin-left: 5px;
+}
+
+.TokenSymbol{
+    width: 50px;
+    font-size: 12px;
+}
+
+.TokenPrice{
+    width: 250px;
+    margin-left: 200px;
+    text-align: right;
+}
+
+.TokenMarketCap{
+    margin-left: 200px;
+    width: 250px;
+    text-align: right;
+}
+
+.LoadingCoin{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 50%;
+    margin-top: 25px;
+}
+
+.LoadingRectangle{
+    background-color: #ccc;
+    width: 5px;
+    height: 20px;
+    margin-right: 4px;
+}

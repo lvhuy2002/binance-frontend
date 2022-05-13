@@ -4,12 +4,16 @@ import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { GlobalProvide } from './GlobalState/GlobalContext';
+
 
 ReactDOM.render(
   <React.StrictMode>
-      <BrowserRouter>
+      <GlobalProvide>
+        <BrowserRouter>
           <App />
-      </BrowserRouter>
+        </BrowserRouter>
+      </GlobalProvide> 
   </React.StrictMode>,
   document.getElementById('root')
 );

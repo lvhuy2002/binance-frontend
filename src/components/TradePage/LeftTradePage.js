@@ -4,10 +4,10 @@ import HeaderTradePage from './HeaderTradePage/HeaderTradePage';
 import SellBuyOrderTradePage from './SellBuyOrderTradePage/SellBuyOrderTradePage';
 import Chart from './Chart/Chart';
 import Transaction from './Transaction/Transaction';
-const LeftTradePage = () => {
+const LeftTradePage = (props) => {
     return (
         <div>
-            <HeaderTradePage />
+            <HeaderTradePage DataAllMarket = {props.DataAllMarket} URL = {props.URL} />
             <div className='TradePageBody'>
                 <SellBuyOrderTradePage />
                 <div className='MidTradePage'>

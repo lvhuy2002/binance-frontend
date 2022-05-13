@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import "./SellBuyOrderTradePage.css"
 
 var SellData = [
@@ -42,6 +42,8 @@ var BuyData = [
 ]
 
 const DataOrderBook = (props) => {
+    const [DataSellOrder,SetDataSellOrder] = useState([]);
+    //const [DataBuy]
     if (props.stateSelected === 'SellOrder'){
         return (
             <div>

@@ -1,0 +1,89 @@
+.Register{
+    width: 1344px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.UserPassRegister{
+    margin-top: 20px;
+    width: 400px;
+    height: 430px;
+    background-color: #fcd535;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+.TitleRegister{
+    margin-top: 70px;
+}
+
+.UserNameRegister{
+    margin-top: 30px;
+}
+.UserNameRegister>h5{
+    width: 75px;
+}
+.UserNameInputRegister{
+    width: 340px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+.UserBioRegister{
+    margin-top: 20px
+}
+.UserBioRegister>h5{
+    width: 75px;
+}
+
+.UserBioInputRegister{
+    width: 340px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.PasswordRegister{
+    margin-top: 20px
+}
+.PasswordRegister>h5{
+    width: 75px;
+}
+
+.PasswordInputRegister{
+    width: 340px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.RegisterButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+    background-color: black;
+    color: white;
+    width: 360px;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+    border-radius: 7px;
+}
+.RegisterButton>h2{
+    text-align: center;
+    width: 360px;
+}
+
+.RegisterButton:hover{
+    background-color:  #262626;
+}
+
