@@ -2,16 +2,16 @@ import React from 'react';
 import "./TradePage.css";
 import HeaderTradePage from './HeaderTradePage/HeaderTradePage';
 import SellBuyOrderTradePage from './SellBuyOrderTradePage/SellBuyOrderTradePage';
-import Chart from './Chart/Chart';
+import ChartTradePage from './Chart/ChartTradePage';
 import Transaction from './Transaction/Transaction';
 const LeftTradePage = (props) => {
     return (
         <div>
             <HeaderTradePage DataAllMarket = {props.DataAllMarket} URL = {props.URL} />
             <div className='TradePageBody'>
-                <SellBuyOrderTradePage />
+                <SellBuyOrderTradePage DataAllMarket = {props.DataAllMarket} URL = {props.URL}/>
                 <div className='MidTradePage'>
-                    <Chart/>
+                    <ChartTradePage/>
                     <Transaction/>
                 </div>
             </div>

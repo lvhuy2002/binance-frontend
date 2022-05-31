@@ -34,10 +34,25 @@
     width: 90px;
 }
 .RightTitle1{
-    width: 90px;
+    width: 150px;
     text-align: right;
 }
-.RightTitle2{
-    width: 100px;
+.historyData{
+    height: 400px;
+    overflow-y: scroll;
+}
+.historyDataComp{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.historyAmount{
+    width: 90px;
+}
+
+.historyOrderDate{
+    width: 170px;
     text-align: right;
 }

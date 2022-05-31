@@ -2,9 +2,8 @@ import React,{useState} from 'react'
 import "./MarketListTradePage.css"
 import MarketData from './MarketData'
 
-function MarketListTradePage() {
+function MarketListTradePage(props) {
     const [stateMarket, setStateMarket] = useState('BTC')
-    const [stateChange, setStateChange] = useState('Change')
     return (
         <div className='MarketListTradePage'>
             <div className='TitleMarketListTradePage'>
@@ -19,14 +18,12 @@ function MarketListTradePage() {
                 <div className='TitleMarketListData'>
                     <h6 className='PairMarket'>Pair</h6>
                     <h6 className='PriceMarket'>Price</h6>
-                    <h6 className= 'ChangeVolumeMarket'>{stateChange === 'Change' ? 'Change' : 'Volume'}</h6>
-                    <div className='ChangeIcon' onClick={() => {stateChange === 'Change' ? setStateChange('Volume') : setStateChange('Change')}}>
-                    </div>
-                </div>
+                    <h6 className= 'ChangeVolumeMarket'>Volume</h6>
+               </div>
             </div>
             <MarketData
-                stateChange = {stateChange}
                 stateMarket = {stateMarket}
+                DataAllMarket = {props.DataAllMarket}
             />
         </div>
     )

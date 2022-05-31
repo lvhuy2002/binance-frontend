@@ -1,20 +1,20 @@
-import React from 'react'
-
+import React , {useContext} from 'react'
+import { GlobalContext } from '../../../GlobalState/GlobalContext'
 function MarketTradesData(props) {
-    if (props.MarketOrMyTrades === 'MyTrades'){
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+    var historyCopy = props.history
+    var historySplit = historyCopy.slice(0,50);
     return (
-        <div>
-            <div className='TitleMarketTrades'>
-                <h6 className='LeftTitle1'>Price(USDT)</h6>
-                <h6 className='RightTitle1'>Amount(SHIB)</h6>
-                <h6 className='RightTitle2'>Time</h6>             
-            </div>
+        <div className='historyData'>
+            {
+                historySplit.map(data => {
+                    return (
+                        <div className='historyDataComp'>
+                            <h6 className='historyAmount'>{data.amount.toLocaleString('en-US',{ minimumFractionDigits: 2 })}</h6>
+                            <h6 className='historyOrderDate'>{data.orderedat.slice(0,10) + " " + data.orderedat.slice(11,19)}</h6>
+                        </div>
+                    )
+                })     
+            }
         </div>
     )
 }

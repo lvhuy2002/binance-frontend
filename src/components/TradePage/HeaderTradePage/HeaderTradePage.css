@@ -44,10 +44,18 @@
 
 .Change24h{
     width: 100px;
-    margin-left: 40px;
+    margin-left: 110px;
 }
 
 .title{
     margin-bottom: 5px;
     color: #848e9c;
+}
+
+.Inc{
+    color: #0f8f5f;
+}
+
+.Dec{
+    color: #d63f54;
 }

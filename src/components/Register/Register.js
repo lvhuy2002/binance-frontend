@@ -11,11 +11,11 @@ const Register = () => {
     //const [checkUserName,SetCheckUserName] = useState(false);
 
     const [UserName, SetUserName] = useState('')
-    const [UserBio, SetUserBio] = useState('')
+    const [UserBio, SetUserBio] = useState('A happy day!!!')
     const [Password, SetPassword] = useState('')
     
     useEffect( () => {
-        fetch('http://52.140.197.200/users/')
+        fetch('http://52.140.197.200:8080/users/')
             .then(res => res.json())
             .then(post => {
                 SetUsers(post)
@@ -23,7 +23,7 @@ const Register = () => {
             .catch(err => alert(err))
     },[])
     const CreatUser = (data) => {
-        fetch('http://52.140.197.200/user/', {
+        fetch('http://52.140.197.200:8080/user/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

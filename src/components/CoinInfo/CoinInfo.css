@@ -1,0 +1,50 @@
+.coinInfo{
+    background-color:aquamarine;
+    height: 475px;
+    padding-top: 80px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+.coinName{
+    display: flex;
+    flex-direction: row;
+}
+.selectedTokenImage{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.coinPrice{
+    margin-top: 10px;
+}
+.props{
+    margin-top: 30px;
+}
+.properties{
+    border-style: solid;
+    border-color:#23272e;
+    border-width: 0px;
+    border-bottom-width: 0.1px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftProperties{
+    width: 100px;
+}
+
+.rightProperties{
+    margin-left: 450px;
+    text-align: right;
+    width: 400px;
+}
+
+.loadingSelectedToken{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-left: 50%;
+}

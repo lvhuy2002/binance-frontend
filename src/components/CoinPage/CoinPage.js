@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import { Link } from "react-router-dom";
 import './CoinPage.css'
+import { GlobalContext } from "../../GlobalState/GlobalContext";
 const DataCoinLoading = () => {
     return (
         <div className="LoadingCoin">
@@ -14,13 +15,17 @@ const DataCoinLoading = () => {
 }
 
 const DataCoin = (props) => {
+    const GlobalState = useContext(GlobalContext)
     return (
         <div>
             {
                 props.DataAllToken.map(Token => {
                     return (
                         <div>
-                            <Link to = {'/'} className='DataToken'>
+                            <Link to = {'/coin/' + Token.tokenname} className='DataToken' 
+                            onClick={() => {
+                                GlobalState.SetCoin(Token.tokenname)
+                            }}>
                                 <img src={Token.tokenimage} className = 'TokenImage' alt='TokenImg'/>
                                 <h5 className="TokenName">{Token.tokenname}</h5>
                                 <h5 className="TokenSymbol">{Token.tokensymbol.toUpperCase()}</h5>
@@ -39,7 +44,7 @@ const DataCoin = (props) => {
 const CoinPage = () => {
     const [DataAllToken, SetDataAllToken] = useState([]);
     useEffect(() => {
-        fetch('http://52.140.197.200/tokens/')
+        fetch('http://52.140.197.200:8080/tokens/')
         .then(res => res.json())
         .then(post => {
             SetDataAllToken(post) 

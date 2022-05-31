@@ -1,56 +1,139 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import { Link } from 'react-router-dom';
+import { GlobalContext } from '../../../GlobalState/GlobalContext';
 
-var MarketListBTC = [
-    {name: 'BTC/ETH', symbol: 'BTC_ETH', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'BTC/USDT', symbol: 'BTC_USDT', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'BTC/BNB', symbol: 'BTC_BNB', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'BTC/USDC', symbol: 'BTC_USDC', price: 9999999, change: '0.99%', volume: 99999999}
-];
-var MarketListETH = [
-    {name:'ETH/BTC', symbol: 'ETH_BTC', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'ETH/USDT', symbol: 'ETH_USDT', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'ETH/BNB', symbol: 'ETH_BNB', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'ETH/USDC', symbol: 'ETH_USDC', price: 9999999, change: '0.99%', volume: 99999999}
-];
-var MarketListUSDT = [
-    {name:'USDT/BTC', symbol: 'USDT_BTC', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'USDT/ETH', symbol: 'USDT_ETH', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'USDT/BNB', symbol: 'USDT_BNB', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'USDT/USDC', symbol: 'USDT_USDC', price: 9999999, change: '0.99%', volume: 99999999}
-];
-var MarketListBNB = [
-    {name:'BNB/BTC', symbol: 'BNB_BTC', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'BNB/ETH', symbol: 'BNB_ETH', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'BNB/USDT', symbol: 'BNB_USDT', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'BNB/USDC', symbol: 'BNB_USDC', price: 9999999, change: '0.99%', volume: 99999999}
-];
-var MarketListUSDC = [
-    {name:'USDC/BTC', symbol: 'USDC_BTC', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'USDC/ETH', symbol: 'USDC_ETH', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'USDC/USDT', symbol: 'USDC_USDT', price: 9999999, change: '0.99%', volume: 99999999},
-    {name:'USDC/BNB', symbol: 'USDC_BNB', price: 9999999, change: '0.99%', volume: 99999999}
-];
 function MarketData(props) {
-    const [MarketData, SetMarketData] = useState(MarketListBTC);
-    useEffect(() =>{
-        if (props.stateMarket === "BTC") {SetMarketData(MarketListBTC);}
-        if (props.stateMarket === "ETH") {SetMarketData(MarketListETH);}
-        if (props.stateMarket === "USDT") {SetMarketData(MarketListUSDT);}
-        if (props.stateMarket === "BNB") {SetMarketData(MarketListBNB);}
-        if (props.stateMarket === "USDC") {SetMarketData(MarketListUSDC);}
-    }, [props.stateMarket])
-
+    const GlobalState = useContext(GlobalContext);
+    var MarketBitcoin = props.DataAllMarket.filter(Data => {
+        return Data.token2 === "Bitcoin"
+    });
+    var MarketEthereum = props.DataAllMarket.filter(Data => {
+        return Data.token2 === "Ethereum"
+    });
+    var MarketTether = props.DataAllMarket.filter(Data => {
+        return Data.token2 === "Tether"
+    });
+    var MarketBNB = props.DataAllMarket.filter(Data => {
+        return Data.token2 === "BNB"
+    });
+    var MarketUSDC = props.DataAllMarket.filter(Data => {
+        return Data.token2 === "USD Coin"
+    }); 
+    function nFormatter(num) {
+        if (num >= 1000000000) {
+           return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+        }
+        if (num >= 1000000) {
+           return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+        }
+        return num;
+    }
+    if (props.stateMarket === "BTC") {
+        return (
+            <div className='MarketData'>
+                {
+                    MarketBitcoin.map((Market, key) => {
+                        return (
+                            <Link to = {'/trade/' + Market.MarketSymbolLink.toUpperCase()} key = {key} className="Link" 
+                            onClick={() => {
+                                GlobalState.SetToken1({name: Market.token1, symbol: Market.token1Symbol});
+                                GlobalState.SetToken2({name: Market.token2, symbol: Market.token2Symbol});
+                            }}>
+                            <div className='DataEachMarket'>
+                                <h6 className='PairMarket' style={{marginLeft: '10px'}}>{Market.MarketSymbol.toUpperCase()}</h6>
+                                <h6 className={(Market.state === 'INC') ? 'PriceMarketINC' : 'PriceMarketDEC'}>{Market.lastprice.toLocaleString('en-US',{ minimumFractionDigits: 6 })}</h6>
+                                <h6 className='ChangeVolumeMarket'>{Market.volume>=1000000 ? nFormatter(Market.volume) : Market.volume.toLocaleString('en-US',{ minimumFractionDigits: 2})}</h6>
+                            </div>
+                            </Link>
+                        )
+                    })
+                }
+            </div>
+        ) 
+    }
+    if (props.stateMarket === "ETH") {
+        return (
+            <div className='MarketData'>
+                {
+                    MarketEthereum.map((Market, key) => {
+                        return (
+                            <Link to = {'/trade/' + Market.MarketSymbolLink.toUpperCase()} key = {key} className="Link" 
+                            onClick={() => {
+                                GlobalState.SetToken1({name: Market.token1, symbol: Market.token1Symbol});
+                                GlobalState.SetToken2({name: Market.token2, symbol: Market.token2Symbol});
+                            }}>
+                            <div className='DataEachMarket'>
+                                <h6 className='PairMarket' style={{marginLeft: '10px'}}>{Market.MarketSymbol.toUpperCase()}</h6>
+                                <h6 className={(Market.state === 'INC') ? 'PriceMarketINC' : 'PriceMarketDEC'}>{Market.lastprice.toLocaleString('en-US',{ minimumFractionDigits: 6 })}</h6>
+                                <h6 className='ChangeVolumeMarket'>{Market.volume>=1000000 ? nFormatter(Market.volume) : Market.volume.toLocaleString('en-US',{ minimumFractionDigits: 2})}</h6>
+                            </div>
+                            </Link>
+                        )
+                    })
+                }
+            </div>
+        )
+    }
+    if (props.stateMarket === "USDT") {
+        return (
+            <div className='MarketData'>
+                {
+                    MarketTether.map((Market, key) => {
+                        return (
+                            <Link to = {'/trade/' + Market.MarketSymbolLink.toUpperCase()} key = {key} className="Link" 
+                            onClick={() => {
+                                GlobalState.SetToken1({name: Market.token1, symbol: Market.token1Symbol});
+                                GlobalState.SetToken2({name: Market.token2, symbol: Market.token2Symbol});
+                            }}>
+                            <div className='DataEachMarket'>
+                                <h6 className='PairMarket' style={{marginLeft: '10px'}}>{Market.MarketSymbol.toUpperCase()}</h6>
+                                <h6 className={(Market.state === 'INC') ? 'PriceMarketINC' : 'PriceMarketDEC'}>{Market.lastprice.toLocaleString('en-US',{ minimumFractionDigits: 6 })}</h6>
+                                <h6 className='ChangeVolumeMarket'>{Market.volume>=1000000 ? nFormatter(Market.volume) : Market.volume.toLocaleString('en-US',{ minimumFractionDigits: 2})}</h6>
+                            </div>
+                            </Link>
+                        )
+                    })
+                }
+            </div>
+        )
+    }
+    if (props.stateMarket === "BNB") {
+        return (
+            <div className='MarketData'>
+                {
+                    MarketBNB.map((Market, key) => {
+                        return (
+                            <Link to = {'/trade/' + Market.MarketSymbolLink.toUpperCase()} key = {key} className="Link" 
+                            onClick={() => {
+                                GlobalState.SetToken1({name: Market.token1, symbol: Market.token1Symbol});
+                                GlobalState.SetToken2({name: Market.token2, symbol: Market.token2Symbol});
+                            }}>
+                            <div className='DataEachMarket'>
+                                <h6 className='PairMarket' style={{marginLeft: '10px'}}>{Market.MarketSymbol.toUpperCase()}</h6>
+                                <h6 className={(Market.state === 'INC') ? 'PriceMarketINC' : 'PriceMarketDEC'}>{Market.lastprice.toLocaleString('en-US',{ minimumFractionDigits: 6 })}</h6>
+                                <h6 className='ChangeVolumeMarket'>{Market.volume>=1000000 ? nFormatter(Market.volume) : Market.volume.toLocaleString('en-US',{ minimumFractionDigits: 2})}</h6>
+                            </div>
+                            </Link>
+                        )
+                    })
+                }
+            </div>
+        )
+    }
     return (
-        <div>
+        <div className='MarketData'>
             {
-                MarketData.map((Market, key) => {
+                MarketUSDC.map((Market, key) => {
                     return (
-                        <Link to = {'/trade/' + Market.symbol} key = {key} className="Link" >
+                        <Link to = {'/trade/' + Market.MarketSymbolLink.toUpperCase()} key = {key} className="Link" 
+                        onClick={() => {
+                            GlobalState.SetToken1({name: Market.token1, symbol: Market.token1Symbol});
+                            GlobalState.SetToken2({name: Market.token2, symbol: Market.token2Symbol});
+                        }}>
                         <div className='DataEachMarket'>
-                            <h6 className='PairMarket'>{Market.name}</h6>
-                            <h6 className='PriceMarket'>{Market.price}</h6>
-                            <h6 className='ChangeVolumeMarket'>{props.stateChange === 'Change' ? Market.change : Market.volume}</h6>
+                            <h6 className='PairMarket' style={{marginLeft: '10px'}}>{Market.MarketSymbol.toUpperCase()}</h6>
+                            <h6 className={(Market.state === 'INC') ? 'PriceMarketINC' : 'PriceMarketDEC'}>{Market.lastprice.toLocaleString('en-US',{ minimumFractionDigits: 6 })}</h6>
+                            <h6 className='ChangeVolumeMarket'>{Market.volume>=1000000 ? nFormatter(Market.volume) : Market.volume.toLocaleString('en-US',{ minimumFractionDigits: 2})}</h6>
                         </div>
                         </Link>
                     )

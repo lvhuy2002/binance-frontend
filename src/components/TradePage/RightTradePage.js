@@ -3,10 +3,10 @@ import MarketListTradePage from './MarketListTradePage/MarketListTradePage'
 import MarketTrade from './MarketTrade/MarketTrade'
 import "./TradePage.css"
 
-function RightTradePage() {
+function RightTradePage(props) {
     return (
         <div className='RightTradePage'>
-            <MarketListTradePage/>
+            <MarketListTradePage DataAllMarket = {props.DataAllMarket}/>
             <MarketTrade/>
         </div>
     )

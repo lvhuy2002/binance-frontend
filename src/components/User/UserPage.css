@@ -1,0 +1,81 @@
+.UserPage {
+    background-color: #ffa500;
+}
+.UserPageTop{
+    background-color: #ffa500;
+    padding-top: 20px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: row;
+}
+.UserImage {
+    height: 250px;
+    width: 250px;
+}
+.UserInfo{
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.UserBioUserPage{
+    margin-top: 20px;
+    width: 400px;
+    word-wrap: break-word;
+}
+
+.UserPageBottom{
+    background-color: #ffa500;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding-bottom: 20px;
+}
+
+.TitleUserDataCoin{
+    display: flex;
+    flex-direction: row;
+}
+
+.TitleUserDataCoin{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 300px;
+}
+
+.TitleUserDataCoinAmount{
+    margin-left: 600px;
+}
+
+.DataUserDataCoin{
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    margin-left: 130px;
+    margin-right: 130px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.TokenImg{
+    margin-left: 135px;
+    width: 23px;
+    height: 23px;
+}
+
+.tokenNameUser{
+    width: 100px;
+    margin-left: 5px;
+}
+
+.tokenSymbolUser{
+    margin-left: 50px;
+    width: 70px;
+}
+
+.amountTokenUser{
+    text-align: right;
+    width: 160px;
+    margin-left: 320px;
+}

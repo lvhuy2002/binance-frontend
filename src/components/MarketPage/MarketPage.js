@@ -21,17 +21,12 @@ const MarketPage = () => {
     const [DataAllToken, SetDataAllToken] = useState([]);
 
     useEffect(() => {
-            fetch('http://52.140.197.200/markets/')
-                .then(res => res.json())
-                .then(post => {
-                    SetDataAllMarket(post)
-                })
-                .catch(err => {
-                    alert("ERROR LOADING MARKET")
-                })
-    },[]);
+        fetch('http://52.140.197.200:8080/market_full/')
+            .then(res => res.json())
+            .then(post => SetDataAllMarket(post))  
+    }, []);
     useEffect(() => {
-            fetch('http://52.140.197.200/tokens/')
+            fetch('http://52.140.197.200:8080/tokens/')
                 .then(res => res.json())
                 .then(post => {
                     SetDataAllToken(post)

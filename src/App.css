@@ -66,6 +66,8 @@
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
+  color:white;
 }
 
 .UserHeader:hover{

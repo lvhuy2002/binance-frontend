@@ -1,0 +1,146 @@
+.Transaction {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    width: 693px;
+    background-color: #1c1e24;
+}
+
+.TransactionComp{
+    width: 346.5px;
+}
+
+.HeaderTransaction{
+    margin-top: 10px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.avbl{
+    color: #848e9c;
+}
+
+.symbolTranHead{
+    width: 282px;
+    color: white;
+    text-align: right;
+}
+
+.inputPriceBlock{
+    margin-left: 10px;
+    width: 317px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #292d34;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 3px;
+}
+.inputPrice{ 
+    color: white;
+    width: 250px;
+    border-width: 0px;
+    outline-width: 0px;
+    border-radius: 0px;
+    text-align: right;
+    background-color: #292d34;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.priceTran{
+    margin-left: 5px;
+    color: #848e9c;
+}
+
+.symbolTranP{
+    text-align: right;
+    margin-right: 5px;
+    color: white;
+}
+
+.inputAmountBlock{
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 317px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #292d34;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 3px;
+}
+
+.inputAmount{ 
+    color: white;
+    width: 230px;
+    border-width: 0px;
+    outline-width: 0px;
+    border-radius: 0px;
+    text-align: right;
+    background-color: #292d34;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.amountTran{
+    margin-left: 5px;
+    color: #848e9c;
+}
+
+.symbolTranA{
+    text-align: right;
+    margin-right: 5px;
+    color: white;
+}
+
+.LoginRequestButton{
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 317px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2b3139;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 3px;
+}
+.SellButton{
+    color: white;
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 317px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #d63f54;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.BuyButton{
+    color: white;
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 317px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #0f8f5f;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

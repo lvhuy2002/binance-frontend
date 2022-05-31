@@ -12,6 +12,8 @@
 }
 
 .MidTradePage{
+    display: flex;
+    flex-direction: column;
     width: 693px;
     height: 797px;
     border-style: solid;
@@ -32,4 +34,11 @@
     flex-direction: column;
 }
 
-
+.loadingBlock{
+    padding-left: 50%;
+    padding-top: 170px;
+    width: 1324px;
+    height: 515px;
+    display: flex;
+    flex-direction: row;
+}

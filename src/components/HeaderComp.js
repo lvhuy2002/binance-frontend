@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import logo from "../img/logo.png";
 import userIcon from "../img/userIcon.png"
 import "../App.css";
@@ -9,6 +9,7 @@ const HeaderComp = () => {
     const handleClick = () => {
         GlobalState.SetUser('')
         GlobalState.SetCheckLogin(false);
+        GlobalState.SetReloading(1);
     }
     return (
         <div className='header'>
@@ -32,10 +33,10 @@ const HeaderComp = () => {
             </div>
             :
             <div className='right_header'>
-                <div className='UserHeader'>
+                <Link to = {'/user'} className='UserHeader'>
                     <h5>{GlobalState.user}</h5>
                     <img src={userIcon} className = 'userIcon' alt='User Icon'/>
-                </div>
+                </Link>
                 <button className='yellow_button' onClick={() => handleClick()}>Log Out</button>
             </div>
             }

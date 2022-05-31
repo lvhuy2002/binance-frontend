@@ -13,10 +13,11 @@ const Login = () => {
     
     const [Alert, SetAlert] = useState(false);
     
+    const [UserBio, SetUserBio] = useState('')
     const [UserName, SetUserName] = useState('');
     const [Password, SetPassword] = useState('');
     useEffect( () => {
-        fetch('http://52.140.197.200/users/')
+        fetch('http://52.140.197.200:8080/users/')
             .then(res => res.json())
             .then(post => {
                 SetUsers(post)
@@ -25,7 +26,7 @@ const Login = () => {
     },[])
     useEffect( () => {
         if (checkUserName === true){
-            fetch('http://52.140.197.200/user/password/' + UserName + '/')
+            fetch('http://52.140.197.200:8080/user/password/' + UserName + '/')
                 .then(res => res.json())
                 .then(post => {
                     SetPasswordUsers(post)
@@ -36,14 +37,17 @@ const Login = () => {
     },[checkUserName])
     const handleClick = () => {
         var checkUser = false
+        var UserBioTmp = ''
         for (var User of Users) {
             if (User.username === UserName) 
             {
                 checkUser = true
+                UserBioTmp = User.userbio
             }           
         }
         if (checkUser === true) {
             SetCheckUserName(true)
+            SetUserBio(UserBioTmp)
         } else {
             SetCheckUserName(false)
             SetAlert(true)
@@ -53,6 +57,7 @@ const Login = () => {
     if (Password === PasswordUsers && PasswordUsers !== '' && checkUserName === true) {
         GlobalState.SetCheckLogin(true)
         GlobalState.SetUser(UserName)
+        GlobalState.SetUserBio(UserBio)
     }
     //useEffect ()
     if (GlobalState.checkLogin === true) {

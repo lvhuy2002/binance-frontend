@@ -57,6 +57,16 @@
     width: 63px;
     text-align: right;
 }
+.PriceMarketINC{
+    color: #0f8f5f;
+    width: 63px;
+    text-align: right;
+}
+.PriceMarketDEC{
+    color: #d63f54;
+    width: 63px;
+    text-align: right;
+}
 
 .ChangeVolumeMarket{
     width: 105px;
@@ -75,11 +85,40 @@
     background-image: url(./image/changed2.png);
 }
 
+.MarketData{
+    margin-top: 13px;
+    height: 250px;
+    overflow-y: scroll;
+}
 .DataEachMarket{
     display: flex;
     flex-direction: row;
     color: white;
     align-items: center;
-    margin-left: 10px;
-    margin-top: 15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-top: 5px;
+}
+
+.DataEachMarket:hover{
+    background-color: #2b3139;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+  
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
 }
