@@ -15,13 +15,7 @@ const TradePage = () => {
     const [high, SetHigh] = useState();
     const [volume, SetVolume] = useState();
     const [priceState, SetPriceState] = useState();
-    useEffect(() => {
-        fetch('http://52.140.197.200:8080/market_full/')
-            .then(res => res.json())
-            .then(post => {
-                SetDataAllMarket(post)
-        })
-    }, []);
+
     useEffect(() => {
         fetch('http://52.140.197.200:8080/tokens/')
             .then(res => res.json())
@@ -46,6 +40,9 @@ const TradePage = () => {
             fetch('http://52.140.197.200:8080/market/volume24h/?token1=' + GlobalState.Token1.name + '&token2=' + GlobalState.Token2.name)
                 .then(res => res.json())
                 .then(post => SetVolume(post))
+            fetch('http://52.140.197.200:8080/market_full/')
+                .then(res => res.json())
+                .then(post => SetDataAllMarket(post))
         }        
         const id = setInterval(() => {
             fetching();

@@ -243,4 +243,11 @@
   margin-right: 4px;
 }
 
+.IncPrice{
+  color: #d63f54;
+}
+
+.DecPrice{
+  color: #0f8f5f;
+}
 

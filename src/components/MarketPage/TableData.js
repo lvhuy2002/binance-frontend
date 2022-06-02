@@ -36,7 +36,7 @@ const TableData = (props) => {
                                     <Link to = {'/trade/' + Market.MarketSymbolLink.toUpperCase()} key = {id} className="Link"> 
                                     <div className='Data'>
                                             <h5>{Market.MarketSymbol.toUpperCase()}</h5>
-                                            <h5>{Market.lastprice.toLocaleString('en-US',{ minimumFractionDigits: 6 })}</h5>
+                                            <h5 className={Market.state === "INC" ? "IncPrice" : "DecPrice"}>{Market.lastprice.toLocaleString('en-US',{ minimumFractionDigits: 6 })}</h5>
                                             <h5>{Market.high.toLocaleString('en-US',{ minimumFractionDigits: 6 })}</h5>
                                             <h5>{Market.low.toLocaleString('en-US',{ minimumFractionDigits: 6 })}</h5>
                                             <h5>{Market.volume.toLocaleString('en-US',{ minimumFractionDigits: 6 })}</h5>

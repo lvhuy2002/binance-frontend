@@ -21,9 +21,15 @@ const MarketPage = () => {
     const [DataAllToken, SetDataAllToken] = useState([]);
 
     useEffect(() => {
-        fetch('http://52.140.197.200:8080/market_full/')
-            .then(res => res.json())
-            .then(post => SetDataAllMarket(post))  
+        const fetching = () => {
+            fetch('http://52.140.197.200:8080/market_full/')
+                .then(res => res.json())
+                .then(post => SetDataAllMarket(post))
+        }        
+        const id = setInterval(() => {
+            fetching();
+        }, 2000)  
+        return () => clearInterval(id);
     }, []);
     useEffect(() => {
             fetch('http://52.140.197.200:8080/tokens/')
