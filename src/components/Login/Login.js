@@ -52,14 +52,15 @@ const Login = () => {
             SetCheckUserName(false)
             SetAlert(true)
         }
-        //console.log(PasswordUsers);
+        if (Password !== PasswordUsers || PasswordUsers === '' || checkUserName === false) {
+            SetAlert(true)
+        }
     }
     if (Password === PasswordUsers && PasswordUsers !== '' && checkUserName === true) {
         GlobalState.SetCheckLogin(true)
         GlobalState.SetUser(UserName)
         GlobalState.SetUserBio(UserBio)
-    }
-    //useEffect ()
+    } 
     if (GlobalState.checkLogin === true) {
         return (
             <Navigate to='/'/>
@@ -72,12 +73,13 @@ const Login = () => {
             <div className="UserPassLogin">
                 <div className="UserNameLogin"> 
                     <h5>User Name: </h5> 
-                    <input type="text" spellCheck="false" className="UserNameInputLogin" onChange={e => {SetUserName(e.target.value); SetCheckUserName(false)}} />
+                    <input type="text" spellCheck="false" className="UserNameInputLogin" onChange={e => {SetUserName(e.target.value); SetCheckUserName(false); SetAlert(false)}} />
                 </div>
                 <div className="PasswordLogin">
                     <h5>Password: </h5>
-                    <input type="password" className="PasswordInputLogin" onChange={e => {SetPassword(e.target.value); SetCheckUserName(false)}} />
+                    <input type="password" className="PasswordInputLogin" onChange={e => {SetPassword(e.target.value); SetCheckUserName(false); SetAlert(false)}} />
                 </div>
+                {!Alert? <div className="alertWrong"></div> : <h5 className="alertWrong">Wrong username or password</h5>}
                 <div>
                     <div className="LoginButton" onClick={() => handleClick() }>
                         <h2>Log In</h2>

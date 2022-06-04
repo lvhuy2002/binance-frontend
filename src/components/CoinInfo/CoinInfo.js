@@ -5,6 +5,7 @@ const CoinInfo = () => {
     const GlobalState = useContext(GlobalContext);
     const [DataAllToken,SetDataAllToken] = useState([])
     const URL = window.location.pathname;
+    const URLReal = URL.replaceAll("%20", " ")
     var selectedToken;
     useEffect(() => {
         fetch("http://52.140.197.200:8080/tokens/")
@@ -13,7 +14,7 @@ const CoinInfo = () => {
             .catch(err => console.log(err))
     },[])
     for (var Token of DataAllToken) {
-        if ('/coin/' + Token.tokenname === URL) {
+        if ('/coin/' + Token.tokenname === URLReal) {
             selectedToken = Token
         }
     }

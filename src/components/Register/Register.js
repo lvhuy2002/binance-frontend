@@ -10,6 +10,7 @@ const Register = () => {
     const [UserMain, SetUserMain] = useState({})
     //const [checkUserName,SetCheckUserName] = useState(false);
 
+    const [Alert, SetAlert] = useState(false);
     const [UserName, SetUserName] = useState('')
     const [UserBio, SetUserBio] = useState('A happy day!!!')
     const [Password, SetPassword] = useState('')
@@ -46,7 +47,7 @@ const Register = () => {
             CreatUser({username: UserName, userbio: UserBio, password: Password})
             GlobalState.SetCheckLogin(true)
         } else {
-            console.log('tru`ng user')
+            SetAlert(true);
         }
     }
 
@@ -62,16 +63,17 @@ const Register = () => {
             <div className="UserPassRegister">
                 <div className="UserNameRegister"> 
                     <h5>User Name: </h5> 
-                    <input type="text" spellCheck="false" className="UserNameInputRegister" onChange={e => {SetUserName(e.target.value)}}/>
+                    <input type="text" spellCheck="false" className="UserNameInputRegister" onChange={e => {SetUserName(e.target.value); SetAlert(false);}}/>
                 </div>
                 <div className="UserBioRegister">
                     <h5>User Bio: </h5>
-                    <input type="text" spellCheck="false" className="UserBioInputRegister" onChange={e => {SetUserBio(e.target.value)}}/>
+                    <input type="text" spellCheck="false" className="UserBioInputRegister" onChange={e => {SetUserBio(e.target.value);}}/>
                 </div>
                 <div className="PasswordRegister">
                     <h5>Password: </h5>
-                    <input type="password" className="PasswordInputRegister" onChange={e => {SetPassword(e.target.value)}}/>
+                    <input type="password" className="PasswordInputRegister" onChange={e => {SetPassword(e.target.value); SetAlert(false);}}/>
                 </div>
+                {!Alert? <div className="alertWrongR"></div> : <h5 className="alertWrongR">Wrong username or password</h5>}
                 <div>
                     <div className="RegisterButton" onClick={() => handleClick()}>
                         <h2>Register</h2>
